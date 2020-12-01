@@ -7,8 +7,8 @@ metadata:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
   securityContext:
-    runAsUser: 1
-    fsGroup: 1000
+    runAsUser: 0
+    fsGroup: 0
   containers:
   - image: ubuntu
     command:
