@@ -6,7 +6,6 @@ metadata:
   annotations:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
-  privileged: true
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
