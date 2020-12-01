@@ -23,6 +23,8 @@ spec:
 
      def str = "Hello world"
 
+     println "$str"
+
 
     node(POD_LABEL) {
     
