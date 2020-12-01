@@ -15,7 +15,6 @@ spec:
     tty: true
     command: ['cat']
     securityContext:
-      privileged: true
       runAsNonRoot: true
       readOnlyRootFilesystem: false
       allowPrivilegeEscalation: false
