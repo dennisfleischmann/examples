@@ -24,6 +24,12 @@ spec:
      def str = "Hello world"
 
      println "$str"
+     
+     def sout = new StringBuilder(), serr = new StringBuilder()
+     def proc = 'hostname'.execute()
+     proc.consumeProcessOutput(sout, serr)
+     proc.waitForOrKill(1000)
+     println "out> $sout err> $serr"
 
 
     node(POD_LABEL) {
