@@ -47,5 +47,6 @@ spec:
                 sh "uptime"
             }
         }
-    }
+      }
+   }
 }
