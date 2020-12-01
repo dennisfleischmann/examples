@@ -33,7 +33,9 @@ spec:
 
          stage('Run long task 2') {
            sh 'echo "Hello World from abc124"'
-           sh -c 'find /'
+           sh -c 'ls -la /'
+           pwd
+           id
         }
 
     }
