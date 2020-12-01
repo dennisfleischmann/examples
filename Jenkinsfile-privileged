@@ -7,6 +7,15 @@ metadata:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
   containers:
+  - image: ubuntu
+    command:
+      - "sleep"
+      - "604800"
+    imagePullPolicy: IfNotPresent
+    name: ubuntu
+    securitycontext:
+      privileged: true
+    restartPolicy: Always
   - name: maven
     image: maven:3.6.2-jdk-8
     tty: true
