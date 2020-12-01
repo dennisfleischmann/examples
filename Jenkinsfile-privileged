@@ -30,7 +30,7 @@ spec:
         stage('Get a Golang project') {
             
             }
-        }
+        
 
     }
 }
