@@ -38,8 +38,6 @@ spec:
     }
     
   pipeline {
-    echo "A Hello World!"
-    sh "echo B Hello from the shell"
     agent { label 'master' }
     stages {
         stage('build') {
