@@ -25,7 +25,7 @@ spec:
 
      println "$str"
 
-     def proc = 'hostname'.execute()
+ 
 
 
     node(POD_LABEL) {
