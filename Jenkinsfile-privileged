@@ -32,7 +32,8 @@ spec:
         }
 
          stage('Run long task 2') {
-           sh 'echo "Hello World from abc125"'
+           sh 'echo "Hello World from abc126"'
+           sh 'hostname'
            sh 'ls -la /'
            sh 'pwd'
            sh 'id'
