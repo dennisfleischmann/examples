@@ -21,6 +21,8 @@ spec:
     restartPolicy: Always
 """) {
 
+   sh 'echo "Hello World from abc127"'
+
     node(POD_LABEL) {
         stage('Run long task') {
             git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
