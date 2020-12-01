@@ -17,7 +17,7 @@ spec:
     imagePullPolicy: IfNotPresent
     name: ubuntu
     securitycontext:
-      privileged: false
+      privileged: true
     restartPolicy: Always
   - name: maven
     image: maven:3.6.2-jdk-8
