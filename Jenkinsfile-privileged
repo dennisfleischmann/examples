@@ -6,9 +6,6 @@ metadata:
   annotations:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
-  securityContext:
-    runAsUser: 1000
-    fsGroup: 1000
   containers:
   - name: maven
     image: maven:3.6.2-jdk-8
