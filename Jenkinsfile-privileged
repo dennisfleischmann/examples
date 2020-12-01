@@ -25,7 +25,7 @@ spec:
 
     node(POD_LABEL) {
     
-        sh 'echo "Hello World from abc128"'
+        sh 'echo "Hello World from abc129"'
         sh 'hostname'
 
         stage('Run long task') {
