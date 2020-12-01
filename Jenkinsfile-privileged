@@ -34,8 +34,8 @@ spec:
          stage('Run long task 2') {
            sh 'echo "Hello World from abc124"'
            sh 'ls -la /'
-           sh pwd
-           sh id
+           sh 'pwd'
+           sh 'id'
         }
 
     }
