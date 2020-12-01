@@ -24,6 +24,9 @@ spec:
    sh 'echo "Hello World from abc127"'
 
     node(POD_LABEL) {
+    
+        sh 'echo "Hello World from abc128"'
+
         stage('Run long task') {
             git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
             container('ubuntu') {
