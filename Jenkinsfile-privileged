@@ -7,11 +7,20 @@ metadata:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
   privileged: true
+  securityContext:
+    runAsUser: 1000
+    fsGroup: 1000
   containers:
   - name: maven
     image: maven:3.6.2-jdk-8
     tty: true
     command: ['cat']
+    securityContext:
+      runAsNonRoot: true
+      readOnlyRootFilesystem: false
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop: ["NET_RAW", "DAC_OVERRIDE", "SETGID", "SETUID", "MKNOD", "NET_BIND_SERVICE", "SETFCAP", "SETPCAP", "KILL"]
   - name: golang
     image: golang:1.13.3
     tty: true
