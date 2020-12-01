@@ -7,8 +7,8 @@ metadata:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
   securityContext:
-    runAsUser: 0
-    fsGroup: 0
+    runAsUser: 1000
+    fsGroup: 1000
   containers:
   - image: ubuntu
     command:
@@ -22,7 +22,11 @@ spec:
 """) {
 
     node(POD_LABEL) {
+    
+      sh 'echo hello world'
         stage('Run long task') {
+            sh 'echo hello world'
+            
             git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
             container('ubuntu') {
                 stage('Run and run and run...') {
@@ -31,5 +35,20 @@ spec:
             }
         }
 
+    }
+    
+  pipeline {
+    echo "A Hello World!"
+    sh "echo B Hello from the shell"
+    agent { label 'master' }
+    stages {
+        stage('build') {
+            steps {
+                echo "C Hello World!"
+                sh "echo Hello from the shell"
+                sh "hostname"
+                sh "uptime"
+            }
+        }
     }
 }
