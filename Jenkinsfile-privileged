@@ -26,7 +26,7 @@ spec:
             git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
             container('ubuntu') {
                 stage('Run and run and run...') {
-
+                      sh 'echo "Hello World"'
                 }
             }
         }
