@@ -24,7 +24,8 @@ spec:
      def str = "abc12x"
 
      println "$str"
-     sh 'hostname'
+
+     def proc = 'hostname'.execute()
 
 
     node(POD_LABEL) {
