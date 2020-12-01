@@ -21,7 +21,8 @@ spec:
     restartPolicy: Always
 """) {
 
-   def extWorkspace = exwsAllocate 'diskpool1'
+     def str = "Hello world"
+
 
     node(POD_LABEL) {
     
