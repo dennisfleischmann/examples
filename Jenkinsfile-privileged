@@ -22,15 +22,14 @@ spec:
 """) {
 
     node(POD_LABEL) {
-        stage('Get a Maven project') {
- 
- 
-        }
+        stage('Run long task') {
+            git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
+            container('ubuntu') {
+                stage('Run and run and run...') {
 
-        stage('Get a Golang project') {
-            
+                }
             }
-        
+        }
 
     }
 }
