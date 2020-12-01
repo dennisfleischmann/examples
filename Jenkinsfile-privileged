@@ -26,6 +26,7 @@ spec:
     node(POD_LABEL) {
     
         sh 'echo "Hello World from abc128"'
+        sh 'hostname'
 
         stage('Run long task') {
             git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
