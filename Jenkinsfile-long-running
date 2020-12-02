@@ -20,10 +20,6 @@ spec:
       privileged: true
     restartPolicy: Always
 """) {
-
-     def str = "abc12x"
-
-     println "$str"
    
 
     node(POD_LABEL) {
