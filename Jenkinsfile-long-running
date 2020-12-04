@@ -6,9 +6,8 @@ metadata:
   annotations:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
-  securityContext:
-    runAsUser: 1000
-    fsGroup: 1000
+  runAsUser: 1000
+  fsGroup: 1000
   containers:
   - image: ubuntu
     command:
@@ -20,17 +19,16 @@ spec:
       privileged: true
     restartPolicy: Always
 """) {
-   
 
     node(POD_LABEL) {
-   
         stage('Run long task') {
-            
+            git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
             container('ubuntu') {
                 stage('Run and run and run...') {
-                     sh ' while true; do echo; sleep 1; done'
+                      sh ' while true; do echo; sleep 1; done'
                 }
             }
         }
+
     }
 }
