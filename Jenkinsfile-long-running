@@ -6,10 +6,6 @@ metadata:
   annotations:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
-  volumes:
-    - name: prometheus
-      persistentVolumeClaim:
-        claimName: prometheus-vpc-prometheus-monitoring-prometheus-0
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
