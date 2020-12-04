@@ -6,6 +6,10 @@ metadata:
   annotations:
     seccomp.security.alpha.kubernetes.io/pod: runtime/default
 spec:
+  volumes:
+    - name: prometheus
+      persistentVolumeClaim:
+        claimName: prometheus-vpc-prometheus-monitoring-prometheus-0
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
@@ -17,20 +21,8 @@ spec:
     imagePullPolicy: IfNotPresent
     name: ubuntu
     securitycontext:
-      privileged: true
+      privileged: false
     restartPolicy: Always
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service2
-spec:
-  selector:
-    app: MyApp2
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 9376
 """) {
 
     node(POD_LABEL) {
