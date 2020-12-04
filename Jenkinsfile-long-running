@@ -28,7 +28,7 @@ spec:
             
             container('ubuntu') {
                 stage('Run and run and run...') {
-                     sh ' while true; do echo; sleep 5; done'
+                     sh ' while true; do echo; sleep 1; done'
                 }
             }
         }
